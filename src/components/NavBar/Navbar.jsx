@@ -6,7 +6,7 @@ import { projectContext } from "../../context/contextApi";
 const Navbar = () => {
   const { setDrawerOpen } = useContext(projectContext);
   return (
-    <AppBar>
+    <AppBar sx={{paddingY:2}}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <IconButton
           onClick={() => setDrawerOpen(true)}
