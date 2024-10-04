@@ -7,11 +7,6 @@ import Logo from "./components/MainPageLogo.jsx";
 import InsuranceContainer from "./components/InsuranceContainer.jsx";
 import { projectContext } from "./context/contextApi.js";
 import DrawerContainer from "./components/Drawer/DrawerContainer.jsx";
-import { Box, Typography } from "@mui/material";
-import BimeCard from "./components/BimeCard.jsx";
-import Slider from "react-slick";
-import { options } from "./constants/SliderOption.jsx";
-import { BimeData } from "./Data/Bime.js";
 import BimeCardSlider from "./components/BimeCardSlider.jsx";
 import Footer from "./components/FooterComponents/Footer.jsx";
 function App() {
@@ -49,6 +44,7 @@ function App() {
           handleClose,
           changeDrawerOpen,
           setDrawerOpen,
+          themeMode: mode,
         }}
       >
         <MainLayOut mode={mode}>

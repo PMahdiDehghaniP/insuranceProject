@@ -8,4 +8,5 @@ export const projectContext = createContext({
   handleClick: (event, button) => {},
   handleClose: () => {},
   anchorEl: null,
+  themeMode : null
 });

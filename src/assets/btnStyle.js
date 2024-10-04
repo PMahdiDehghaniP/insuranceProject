@@ -1,5 +1,7 @@
 export const buttonStyle = {
   transition: "0.5s all ease-in-out",
+  textDecoration: "none",
+  color: "#ffffff",
   background: "none",
   fontSize: "18px",
   position: "relative",
