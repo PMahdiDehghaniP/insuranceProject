@@ -3,10 +3,10 @@ import { projectContext } from "../../context/contextApi";
 import { List, ListItemButton, Collapse, ListItemText } from "@mui/material";
 import { ExpandMore, ExpandLess } from "@mui/icons-material";
 import { drawerBtnsStyle } from "../../assets/btnStyle";
-
+import { useNavigate } from "react-router-dom";
 const DrawerOptions = () => {
+  const navigate = useNavigate();
   const { handleClick, handleClose } = useContext(projectContext);
-
   const [openBanks, setOpenBanks] = useState(false);
   const [openSaham, setOpenSaham] = useState(false);
   const [openServices, setOpenServices] = useState(false);
@@ -19,12 +19,27 @@ const DrawerOptions = () => {
 
   return (
     <List>
+      <ListItemButton
+        onClick={() => {
+          handleClose();
+          navigate("/");
+        }}
+      >
+        <ListItemText sx={drawerBtnsStyle} primary="خانه" />
+      </ListItemButton>
       <ListItemButton onClick={handleClose}>
         <ListItemText sx={drawerBtnsStyle} primary="همکاری با ما" />
       </ListItemButton>
 
       <ListItemButton onClick={handleClose}>
-        <ListItemText sx={drawerBtnsStyle} primary="ارتباط با ما" />
+        <ListItemText
+          sx={drawerBtnsStyle}
+          primary="ارتباط با ما"
+          onClick={() => {
+            handleClose();
+            navigate("/contactus");
+          }}
+        />
       </ListItemButton>
 
       <ListItemButton onClick={toggleBanks}>
@@ -33,17 +48,45 @@ const DrawerOptions = () => {
       </ListItemButton>
       <Collapse in={openBanks} timeout="auto" unmountOnExit>
         <List component="div" disablePadding sx={{ direction: "rtl" }}>
-          <ListItemButton
-            sx={{ pr: 4 }}
-            onClick={(event) => handleClick(event, "Banks")}
-          >
-            <ListItemText sx={drawerBtnsStyle} primary="بانک ملت" />
+          <ListItemButton sx={{ pr: 4 }}>
+            <ListItemText
+              sx={drawerBtnsStyle}
+              primary="بانک ملت"
+              onClick={() => {
+                handleClose();
+                window.open("https://bankmellat.ir/default.aspx", "_blank");
+              }}
+            />
           </ListItemButton>
-          <ListItemButton
-            sx={{ pr: 4 }}
-            onClick={(event) => handleClick(event, "Banks")}
-          >
-            <ListItemText sx={drawerBtnsStyle} primary="بانک رفاه" />
+          <ListItemButton sx={{ pr: 4 }}>
+            <ListItemText
+              sx={drawerBtnsStyle}
+              primary="بانک رفاه"
+              onClick={() => {
+                handleClose();
+                window.open("https://www.refah-bank.ir/", "_blank");
+              }}
+            />
+          </ListItemButton>
+          <ListItemButton sx={{ pr: 4 }}>
+            <ListItemText
+              sx={drawerBtnsStyle}
+              onClick={() => {
+                handleClose();
+                window.open("https://qmb.ir/", "_blank");
+              }}
+              primary="بانک قرض الحسنه  مهر ایران"
+            />
+          </ListItemButton>
+          <ListItemButton sx={{ pr: 4 }}>
+            <ListItemText
+              sx={drawerBtnsStyle}
+              primary="بانک تجارت"
+              onClick={() => {
+                handleClose();
+                window.open("https://www.tejaratbank.ir/", "_blank");
+              }}
+            />
           </ListItemButton>
         </List>
       </Collapse>
@@ -65,27 +108,6 @@ const DrawerOptions = () => {
             onClick={(event) => handleClick(event, "Saham")}
           >
             <ListItemText sx={drawerBtnsStyle} primary="نقشه بازار بورس" />
-          </ListItemButton>
-        </List>
-      </Collapse>
-
-      <ListItemButton onClick={toggleServices}>
-        <ListItemText sx={drawerBtnsStyle} primary="خدمات ما" />
-        {openServices ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      <Collapse in={openServices} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding sx={{ direction: "rtl" }}>
-          <ListItemButton
-            sx={{ pr: 4 }}
-            onClick={(event) => handleClick(event, "Services")}
-          >
-            <ListItemText sx={drawerBtnsStyle} primary="خدمات مشاور مالی" />
-          </ListItemButton>
-          <ListItemButton
-            sx={{ pr: 4 }}
-            onClick={(event) => handleClick(event, "Services")}
-          >
-            <ListItemText sx={drawerBtnsStyle} primary="مدیریت دارایی ها" />
           </ListItemButton>
         </List>
       </Collapse>

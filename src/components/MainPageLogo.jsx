@@ -16,13 +16,13 @@ const Logo = () => {
             ? { WebkitMaskImage: visibleMask, maskImage: visibleMask }
             : { WebkitMaskImage: hiddenMask, maskImage: hiddenMask }
         }
-        transition={{ duration: 1,delay:0.5 }}
+        transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}
         onViewportEnter={() => setIsInView(true)}
       >
         <Box
           component="img"
-          src={"../../public/images/bimePhoto.png"}
+          src={"/images/bimePhoto.png"}
           alt=""
           onLoad={() => setIsLoaded(true)}
           display="flex"

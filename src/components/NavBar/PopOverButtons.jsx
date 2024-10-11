@@ -17,12 +17,14 @@ const Popovers = () => {
       <Button sx={buttonStyle} onClick={() => handleNavigate("/")}>
         خانه
       </Button>
-      <Button sx={buttonStyle}>همکاری با ما</Button>
-      <Button sx={buttonStyle} onClick={() => handleNavigate("/contactus")}>ارتباط با ما</Button>
+
       <Button sx={buttonStyle} onClick={(event) => handleClick(event, "Banks")}>
         صندوق بانک ها
       </Button>
       <Button sx={buttonStyle}>مجله بیمه</Button>
+      <Button sx={buttonStyle} onClick={() => handleNavigate("/contactus")}>
+        ارتباط با ما
+      </Button>
       <Button
         sx={buttonStyle}
         onClick={(event) => handleClick(event, "AboutUs")}

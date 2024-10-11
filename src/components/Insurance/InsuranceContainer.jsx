@@ -1,4 +1,4 @@
-import InsuranceBox from "./insuranceBox";
+import InsuranceBox from "./InsuranceBox";
 import {
   Apartment,
   BeachAccess,

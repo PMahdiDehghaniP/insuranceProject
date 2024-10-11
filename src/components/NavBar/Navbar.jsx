@@ -27,8 +27,8 @@ const Navbar = () => {
           component="img"
           src="/images/logo.png"
           sx={{
-            width: "180px",
-            height: "auto",
+            width: "80px",
+            height: "80px",
             mx: {
               xs: "auto",
               sm: "auto",

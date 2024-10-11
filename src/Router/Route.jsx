@@ -1,25 +1,32 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
-import InsurancePage from "../Page/PagesLayout";
-import PageLayout from "../Page/PagesLayout";
 import ContactUs from "../Page/ContactUs";
+import BuildingInsurance from "../Page/Building";
+import Home from "../Page/Home";
+import MainLayOut from "../layouts/MainLayOut";
+import Travel from "../Page/Travel";
+import Fire from "../Page/Fire";
+import Supplementary from "../Page/Supplementary";
+import Life from "../Page/Life";
+import CarBody from "../Page/CarBody";
+import ThirdParty from "../Page/ThirdParty";
+import Earthquake from "../Page/Earthquake";
 export const ProjectRouter = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
   {
     path: "/insurance",
-    element: <PageLayout />,
+    element: <MainLayOut />,
     children: [
-      { path: "Building" },
-      { path: "Supplementary" },
-      { path: "Travel" },
-      { path: "Fire" },
-      { path: "Life" },
-      { path: "Earthquake" },
-      { path: "CarBody" },
-      { path: "ThirdParty" },
+      { path: "Building", element: <BuildingInsurance /> },
+      { path: "Supplementary", element: <Supplementary /> },
+      { path: "Travel", element: <Travel /> },
+      { path: "Fire", element: <Fire /> },
+      { path: "Life", element: <Life /> },
+      { path: "Earthquake", element: <Earthquake /> },
+      { path: "CarBody", element: <CarBody /> },
+      { path: "ThirdParty", element: <ThirdParty /> },
     ],
   },
   {

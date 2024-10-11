@@ -16,9 +16,6 @@ const PopOverOptions = () => {
           <ListItem button onClick={handleClose}>
             <CustomTypography>سوالات متداول</CustomTypography>
           </ListItem>
-          <ListItem button onClick={handleClose}>
-            <CustomTypography>اعضای شرکت</CustomTypography>
-          </ListItem>
         </List>
       );
     case "Services":
@@ -55,16 +52,40 @@ const PopOverOptions = () => {
     case "Banks":
       return (
         <List>
-          <ListItem button onClick={handleClose}>
+          <ListItem
+            button
+            onClick={() => {
+              handleClose();
+              window.open("https://bankmellat.ir/default.aspx", "_blank");
+            }}
+          >
             <CustomTypography>بانک ملت</CustomTypography>
           </ListItem>
-          <ListItem button onClick={handleClose}>
+          <ListItem
+            button
+            onClick={() => {
+              handleClose();
+              window.open("https://www.refah-bank.ir/", "_blank");
+            }}
+          >
             <CustomTypography>بانک رفاه</CustomTypography>
           </ListItem>
-          <ListItem button onClick={handleClose}>
+          <ListItem
+            button
+            onClick={() => {
+              handleClose();
+              window.open("https://qmb.ir/", "_blank");
+            }}
+          >
             <CustomTypography>بانک قرض الحسنه مهر ایران</CustomTypography>
           </ListItem>
-          <ListItem button onClick={handleClose}>
+          <ListItem
+            button
+            onClick={() => {
+              handleClose();
+              window.open("https://www.tejaratbank.ir/", "_blank");
+            }}
+          >
             <CustomTypography>بانک تجارت</CustomTypography>
           </ListItem>
         </List>

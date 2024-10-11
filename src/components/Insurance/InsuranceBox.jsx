@@ -1,7 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import Grid from "@mui/material/Grid2";
-import { useNavigate } from "react-router-dom";
 const InsuranceBox = ({ Icon, Text, link }) => {
   return (
     <Grid item xs={4} sm={6} md={6} lg={12}>
